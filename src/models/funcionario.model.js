@@ -11,7 +11,7 @@ class Funcionario{
 
         if(sexo.toLowerCase() == 'masculino' || sexo.toLowerCase() == 'feminino' || 
         sexo.toLowerCase() == 'outros'){
-            this.sexo = sexo
+            this.sexo = sexo.toLowerCase()
         }else{
             throw new Error('Sexo inválido. Digite uma das opções: "masculino", "feminino" ou "outros" ')
         }
@@ -22,15 +22,20 @@ class Funcionario{
             throw new Error('Idade inválida')
         }
 
-        if(cpf.length == 11){
-            this.cpf = cpf
+        if(cpf.toString().length == 11){
+            this.cpf = cpf.toString()
         }else{
             throw new Error('CPF inválido. O CPF precisa conter 11 dígitos, sem pontuação')
         }
-        }
-
-        }
+        //Data de admissão do funcionario
+        this.dataAdmissao = moment(new Date()).format('DD/MM/YYYY')
+        
     }
-
-
 }
+
+//Teste de novo funcionario
+/*let murilo = new Funcionario('murilo', 'MASCULINO', 24, 12345678900)
+console.log(murilo)*/
+
+//Export
+module.exports = Funcionario;
