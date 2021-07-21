@@ -4,7 +4,9 @@
   "description": "PROJETO FINAL - MÓDULO 4: API Cinema",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.js",
+    "start": "node ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/murilosabino/mod4-cinema/issues"
   },
-  "homepage": "https://github.com/murilosabino/mod4-cinema#readme"
+  "homepage": "https://github.com/murilosabino/mod4-cinema#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
