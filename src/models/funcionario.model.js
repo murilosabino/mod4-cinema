@@ -2,7 +2,7 @@ const moment = require('moment')
 
 //Classe funcionario com algumas validações
 class Funcionario{
-    constructor(nome, sexo, idade, cpf){
+    constructor(nome, sexo, idade, CPF){
         if(nome.length > 2){
             this.nome = nome
         }else{
@@ -22,8 +22,8 @@ class Funcionario{
             throw new Error('Idade inválida')
         }
 
-        if(cpf.toString().length == 11){
-            this.cpf = cpf.toString()
+        if(CPF.toString().length == 11){
+            this.CPF = CPF.toString()
         }else{
             throw new Error('CPF inválido. O CPF precisa conter 11 dígitos, sem pontuação')
         }
