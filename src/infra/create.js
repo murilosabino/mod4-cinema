@@ -4,7 +4,7 @@ const caminho = path.resolve(__dirname, '../', '../', 'database.db')
 const bd = new sqlite3.Database(caminho);
 
 const FUNCIONARIOS_SCHEMA = `
-CREATE TABLE IF NOT EXISTS "funcionarios" (
+CREATE TABLE 'funcionarios' (
     "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "nome" varchar(50),
     "sexo" varchar(10),
