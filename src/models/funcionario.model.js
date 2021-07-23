@@ -23,7 +23,7 @@ class Funcionario{
         }
 
         if(CPF.toString().length == 11){
-            this.CPF = CPF.toString()
+            this.CPF = CPF
         }else{
             throw new Error('CPF inválido. O CPF precisa conter 11 dígitos, sem pontuação')
         }

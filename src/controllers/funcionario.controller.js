@@ -14,65 +14,61 @@ function funcionario(app, bd){
       catch(e){
         res.json({'erro': e.message})
       }
-
-      
-
-        /*bd.all("SELECT * FROM funcionarios", (err, rows) =>{
-          if(err){
-            res.json({message: 'erro'})
-          }
-          else{
-            res.json({
-              result: rows
-            })
-          }
-        })*/
       })
+
+    app.get('/funcionarios/:CPF', async (req, res) => {
+
+        try{
+          let CPF = req.params.CPF;
+          let rows = await funcDAO.getFuncionario(CPF)
+          res.json({'result': rows})
+        }
+        catch(e){
+          res.json({'erro': e.message})
+        }
+        })
 
     app.post('/funcionarios', async (req, res, next) => {
       try{
-        let newFuncionario = new Funcionario('murilo', 'MASCULINO', 24, 12345678900)
+        let {nome, sexo, idade, CPF} = req.body
+        let newFuncionario = new Funcionario(nome, sexo, idade, CPF)
         let rows = await funcDAO.createFuncionario(newFuncionario)
-        res.json({'result': rows})
+        res.json({
+          'message': 'funcionario criado',
+          'result': rows})
       }
       catch(e){
         res.json({'erro': e.message})
       }
-        /*const {nome, sexo, idade, cpf, dataAdmissao} = req.body
-        let newFuncionario = new Funcionario(nome, sexo, idade, cpf, dataAdmissao);
-        bd.funcionarios.push(newFuncionario)*/
-        res.json({'message':'Funcionário criado'})
       })
 
-    app.delete('/funcionarios/:CPF', (req, res)=>{
-        let parametroCPF = req.params.CPF
-        bd.funcionarios = bd.funcionarios.filter((item)=>{
-          return item.CPF !== parametroCPF
-        })
+    app.delete('/funcionarios/:CPF', async (req, res)=>{
+      try{
+        let CPF = req.params.CPF
+        let rows = await funcDAO.deleteFuncionario(CPF)
         res.json({
-          message: `O usuario ${parametroCPF} foi deletado`
-        })
+          'message': 'funcionario deletado',
+        'result': rows})
+      }
+      catch(e){
+        res.json({'erro': e.message})
+      }
       })
 
-    app.put('/funcionarios/:CPF', (req, res)=>{
-        let parametroCPF = req.params.CPF
-        let bodyCPF = req.body.CPF
-        bd.funcionarios = bd.funcionarios.map((item)=>{
-          if(parametroCPF === item.CPF){
-            item.CPF = bodyCPF
-            return item
-          }
-          else{
-            res.json({
-              message: `Não existe nenhum usuário com o CPF ${parametroCPF}`
-            })
-          }
-           
-        })
+    app.put('/funcionarios/:id', async (req, res)=>{
+      try{
+        let id = req.params.id
+        let {nome, sexo, idade, CPF} = req.body
+        let rows = await funcDAO.updateFuncionario(nome, sexo, idade, CPF, id)
         res.json({
-          message: `O id ${parametroCPF} foi alterado para ${bodyCPF}`
-        })
-      })
+          'message': 'funcionario atualizado',
+          'result': rows})
+      }
+      catch(e){
+        res.json({'erro': e.message})
+      }
+    })
 }
+
 
 module.exports = funcionario

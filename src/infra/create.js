@@ -9,7 +9,8 @@ CREATE TABLE 'funcionarios' (
     "nome" varchar(50),
     "sexo" varchar(10),
     "idade" int,
-    "CPF" varchar(11)
+    "CPF" int,
+    "dataAdmissao" date
   );`;
 
 function criaFuncionario(criacao){
