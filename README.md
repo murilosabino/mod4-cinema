@@ -26,13 +26,18 @@
 
 ### GET
 #### GET Todos os funcionarios:
-<p>Lista todos os funcionarios do banco de dados</p>
-`localhost:3003/funcionarios`
+<p>Lista todos os funcionarios do banco de dados: localhost:3003/funcionarios</p>
+
 
 #### GET 1 funcionario:
-<p>Lista 1 funcionario especificado pelo seu CPF</p>
-`localhost:3003/funcionarios/INSIRA_CPF_AQUI`
+<p>Lista 1 funcionario especificado pelo seu CPF: localhost:3003/funcionarios/INSIRA_CPF_AQUI</p>
 
-### POST:
-<p>Envia um novo funcionário para o banco de dados</p>
-`localhost:3003/funcionarios/`
+
+### POST
+<p>Envia um novo funcionário para o banco de dados: localhost:3003/funcionarios/</p>
+
+### PUT
+<p>Atualiza 1 funcionario pelo seu ID: localhost:3003/funcionarios/INSIRA_ID_AQUI</p>
+
+### DELETE
+<p>Deleta 1 funcionario pelo seu CPF: localhost:3003/funcionarios/INSIRA_CPF_AQUI</p>
