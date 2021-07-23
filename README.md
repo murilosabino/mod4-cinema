@@ -25,19 +25,25 @@
 ## Rotas
 
 ### GET
-#### GET Todos os funcionarios:
-<p>Lista todos os funcionarios do banco de dados: localhost:3003/funcionarios</p>
+#### GET Todos os funcionários:
+<p>Lista todos os funcionários do banco de dados: localhost:3003/funcionarios</p>
 
 
-#### GET 1 funcionario:
-<p>Lista 1 funcionario especificado pelo seu CPF: localhost:3003/funcionarios/INSIRA_CPF_AQUI</p>
+#### GET 1 funcionário:
+<p>Lista 1 funcionário especificado pelo seu CPF: localhost:3003/funcionarios/INSIRA_CPF_AQUI</p>
 
 
 ### POST
 <p>Envia um novo funcionário para o banco de dados: localhost:3003/funcionarios/</p>
 
 ### PUT
-<p>Atualiza 1 funcionario pelo seu ID: localhost:3003/funcionarios/INSIRA_ID_AQUI</p>
+<p>Atualiza 1 funcionário pelo seu ID: localhost:3003/funcionarios/INSIRA_ID_AQUI</p>
 
 ### DELETE
-<p>Deleta 1 funcionario pelo seu CPF: localhost:3003/funcionarios/INSIRA_CPF_AQUI</p>
+<p>Deleta 1 funcionário pelo seu CPF: localhost:3003/funcionarios/INSIRA_CPF_AQUI</p>
+
+## Como executar?
+1. Abrir o projeto em uma IDE de sua preferência.
+2. Rodar o arquivo (por meio do node) "create.js" para criar o banco de dados.
+3. Inserir no terminal o comando "npm run start" ou "npm run dev".
+4. No Postman ou Insomnia, testar as rotas descritas acima.
